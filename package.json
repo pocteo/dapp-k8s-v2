@@ -1,0 +1,31 @@
+{
+  "name": "souhail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connection.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "truffle-compile": "^4.2.1",
+    "truffle-contract": "^4.0.28",
+    "truffle-hdwallet-provider": "^1.0.16",
+    "web3": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbirHamzi/dapp-k8s-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbirHamzi/dapp-k8s-v2/issues"
+  },
+  "homepage": "https://github.com/AbirHamzi/dapp-k8s-v2#readme"
+}
