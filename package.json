@@ -7,6 +7,7 @@
     "test": "test"
   },
   "dependencies": {
+    "alert-node": "^1.2.6",
     "express": "^4.17.1",
     "truffle-compile": "^4.2.1",
     "truffle-contract": "^4.0.28",

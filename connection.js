@@ -33,18 +33,26 @@ module.exports = {
       // Bootstrap the paiement abstraction for Use.
       paiement.setProvider(self.web3.currentProvider);
   
-      var paiement_instance;
-      paiement.deployed().then(function(instance) {
-        paiement_instance = instance;
-        const  balance= paiement_instance.getBalance.call({from: account});
-        console.log(balance);
-        return balance;
-      }).then(function(value) {
-          callback(value.valueOf());
-      }).catch(function(e) {
-          console.log(e);
-          callback("Error 404");
-      });
+      var promise1 = new Promise(function(resolve, reject) {
+        var paiement_instance;
+           paiement.deployed().then(function(instance) {
+             paiement_instance = instance;
+             paiement_instance.getBalance.call({from: account}).then(function(value) {
+             console.log(value.toString(10));
+             callback(value.toString(10));
+             return value.toString(10);
+             });
+           }).catch(function(e) {
+               console.log(e);
+               callback("Error 404");
+           });
+     });
+     
+     promise1.then(function(value) {
+       console.log(value);
+     });
+     
+     
     },
     sendCoin: function(amount, sender, receiver, callback) {
       var self = this;
